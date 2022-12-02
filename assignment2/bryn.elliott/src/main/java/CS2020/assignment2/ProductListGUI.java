@@ -14,18 +14,23 @@ public class ProductListGUI
 
         JPanel panel1 = new JPanel();//full window
         panel1.setBackground(Color.gray);
-        panel1.setBounds(0,0,800,600);
+        panel1.setSize(800, 600);
+        panel1.setLayout(new BorderLayout());
         JPanel panel2 = new JPanel();//left side
         panel2.setBackground(Color.gray);
-        panel2.setBounds(0,0,800,600);
+        panel2.setPreferredSize(new Dimension(500, 600));
+        panel2.setBorder(BorderFactory.createRaisedBevelBorder());
         JPanel panel3 = new JPanel();//right side
         panel3.setBackground(Color.white);
-        panel3.setBounds(0,0,800,600);
+        panel3.setPreferredSize(new Dimension(300, 600));
+        panel3.setBorder(BorderFactory.createEmptyBorder());
 
 
-        JSplitPane splitPane = new JSplitPane(SwingConstants.VERTICAL, panel2, panel3);
-        splitPane.setResizeWeight(1.0);
-        panel1.add(splitPane);
+        // JSplitPane splitPane = new JSplitPane(SwingConstants.VERTICAL, panel2, panel3);
+        // panel1.add(splitPane);
+
+        panel1.add(panel2, BorderLayout.LINE_START);
+        panel1.add(panel3, BorderLayout.LINE_END);
 
         JMenuItem i1, i2, i3, i4;  
         JMenuBar menuBar = new JMenuBar();  
